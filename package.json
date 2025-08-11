@@ -1,0 +1,24 @@
+{
+  "name": "projeto-6",
+  "version": "1.0.0",
+  "description": "Repositório criado para o desenvolvimento dos exercícios da tutoria do curso de Desenvolvimento de Software do Grupo Boticário",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielleJeanine/Projeto-6.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DanielleJeanine/Projeto-6/issues"
+  },
+  "homepage": "https://github.com/DanielleJeanine/Projeto-6#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
