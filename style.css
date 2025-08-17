@@ -322,6 +322,29 @@ body {
 
 .footer-content p {
   font-size: 0.8rem;
+  margin-top: 10px;
   color: #1a1818;
 }
 
+.footer-content a {
+  color: #333; 
+  margin-left: 10px;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #c94cb5; /* magenta de destaque ao passar o mouse */
+}
+
+.dark-mode footer a{
+  color: #ddd;
+}
+
+.dark-mode footer p{
+  color: #ddd;
+}
+
+.dark-mode footer a:hover {
+  color: #c94cb5;
+}

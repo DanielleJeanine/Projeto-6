@@ -269,11 +269,19 @@ pdfBtn.addEventListener("click", () => {
   doc.text("Pergunta:", 10, y);
   y += 6;
 
-  // Pergunta (texto)
+// Pergunta (texto)
   doc.setFont("helvetica", "normal");
   doc.setFontSize(12);
   doc.setTextColor("#333333");
-
+  const perguntaLines = doc.splitTextToSize(pergunta, 190);
+  perguntaLines.forEach(line => {
+    if (y > 280) { // nova página
+      doc.addPage();
+      y = 20;
+    }
+    doc.text(line, 10, y);
+    y += 6;
+  });
 
   // Linha separadora neutra
   if (y > 280) {
@@ -284,6 +292,7 @@ pdfBtn.addEventListener("click", () => {
   doc.setLineWidth(0.5);
   doc.line(10, y, 200, y);
   y += 8;
+
 
   // Resposta (título)
   doc.setFont("helvetica", "bold");
