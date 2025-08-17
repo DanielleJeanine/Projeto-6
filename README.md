@@ -41,8 +41,7 @@ O projeto foi desenvolvido com foco em **acessibilidade**, oferecendo recursos q
 
 1. Clone o repositório:
 
-bash
-git clone https://github.com/seu-usuario/a.IA.git
+git clone https://github.com/DanielleJeanine/a.IA.git
 
 2. Abra o projeto em seu navegador:
 
@@ -54,44 +53,42 @@ Configurar um servidor local (recomendado para fetch API)
 
 ## Uso
 
-Insira sua chave de API (OpenAI ou Gemini) na interface.
+1. **Inserir chave de API**: Digite sua chave (OpenAI ou Gemini) na interface.
+2. **Inserir pergunta**: Digite no campo de texto.
+3. **Enviar**: Clique no botão enviar ou pressione Enter.
+4. **Visualizar resposta**: A resposta aparece na área de resposta, com Markdown renderizado.
+5. **Copiar texto**: Clique no botão 📋 para copiar a resposta.
+6. **Limpar texto**: Clique no botão 🗑️ para limpar pergunta e resposta.
+7. **Exportar PDF**: Clique no botão 📄 para salvar a conversa em PDF formatado.
+8. **Histórico**: Clique no botão "Histórico" para visualizar perguntas anteriores.
+9. **Acessibilidade**: Ajuste a fonte e alterne entre modo claro e escuro.
+10. **Leitura de texto**: Selecione texto na resposta e clique no botão 🔊 para ler, ou ⏹️ para parar.
 
-Inserir pergunta: Digite no campo de texto.
-
-Enviar: Clique no botão enviar ou pressione Enter.
-
-Visualizar resposta: A resposta aparece na área de resposta, com Markdown renderizado.
-
-Copiar texto : Clique no botão 📋 para copiar o texto de resposta para a área de trabalho.
-
-Limpar texto: Clique no botão 🗑️ para limpar pergunta e resposta.
-
-Exportar PDF: Clique no botão 📄 para salvar a conversa em um pdf formatado.
-
-Histórico: Clique no botão "Histórico" para ver todas as perguntas feitas.
-
-Acessibilidade: Ajuste a fonte e alterne entre modo claro e escuro.
-
-Leitura de texto: Selecione texto na resposta e clique no botão 🔊 para ler, ou ⏹️ para parar.
 
 ---
 
 ## Estrutura do projeto
 
+a.IA/
 ├─ index.html          # Página principal
 ├─ style.css           # Estilos CSS
 ├─ script.js           # Lógica JavaScript
-├─ assets/             # Imagens e logo
-└─ README.md
+├─ assets/             # Imagens, logos e ícones
+│   ├─ logo.svg
+│   ├─ botao.svg
+│   └─ demo-banner.png
+└─ README.md           # Documentação do projeto
+
 
 ---
 
 ## Equipe de Desenvolvimento
 
-[Carla Matos](https://github.com/carlapw) - Estrutura HTML
-[Danielle Jeanine](https://github.com/DanielleJeanine) – Script de Acessibilidade
-[Ítalo Feitosa](https://github.com/Itajen) – Integração de APIs
-[Thiago dos Reis](https://github.com/tchaaago) – UI/UX e design responsivo
+- **[Carla Matos](https://github.com/carlapw)** – Estrutura HTML
+- **[Danielle Jeanine](https://github.com/DanielleJeanine)** – Script de Acessibilidade
+- **[Ítalo Feitosa](https://github.com/Itajen)** – Integração de APIs
+- **[Thiago dos Reis](https://github.com/tchaaago)** – UI/UX e design responsivo
+
 
 ---
 
