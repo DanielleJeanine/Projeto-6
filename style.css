@@ -1,0 +1,174 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Atkinson Hyperlegible", Arial, sans-serif;
+  background: #f1f2f4;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #2c2c2c;
+}
+
+.content .logo {
+  width: 130px;
+  margin: 10px 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+/* Seção API */
+label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.input-group input {
+  flex: 1;
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-group .botao {
+  background: #c94cb5;
+  border: none;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.input-group .botao:hover {
+  background: #a63e95;
+}
+
+.input-group .botao img {
+  width: 18px;
+  height: 18px;
+}
+
+.nota {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 8px;
+}
+
+/* Pergunta */
+#tela-pergunta {
+  margin-top: 60px;
+}
+
+#tela-pergunta h2 {
+  font-size: 1.4rem;
+  color: #c94cb5;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.input-container input {
+  flex: 1;
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.input-container .btn-enviar {
+  background: #c94cb5;
+  border: none;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.input-container .btn-enviar:hover {
+  background: #a63e95;
+}
+
+.resposta {
+  background: #fff;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.resposta h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #2c2c2c;
+}
+
+#resposta {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  white-space: pre-wrap;
+}
+
+.acoes {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.acoes button {
+  background: #eee;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 0.9rem;
+}
+
+.acoes button:hover {
+  background: #ddd;
+}
+
