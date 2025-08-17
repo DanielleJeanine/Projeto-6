@@ -24,16 +24,13 @@ O projeto foi desenvolvido com foco em **acessibilidade**, oferecendo recursos q
 
 ---
 
-
 ## Tecnologias Utilizadas
 
-- **HTML5 / CSS3 / JavaScript (Vanilla)**
-- [jsPDF](https://github.com/parallax/jsPDF) para exportação de PDF
-- APIs de geração de conteúdo:
-  - OpenAI GPT-3.5
-  - Gemini (Google)
-- Fontes acessíveis: **Atkinson Hyperlegible**, **Sora**
-- Cores do projeto: magenta #c94cb5, tons neutros e dark mode cinza escuro
+| Categoria | Tecnologia | LOGO |
+| :-------- | :--------- | :----: |
+| Frontend | HTML5 | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) |
+| Frontend | CSS3 | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) |
+| Frontend | JavaScript | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) |
 
 ---
 
@@ -68,7 +65,7 @@ Configurar um servidor local (recomendado para fetch API)
 ---
 
 ## Estrutura do projeto
-
+```
 a.IA/
 ├─ index.html          # Página principal
 ├─ style.css           # Estilos CSS
@@ -78,7 +75,7 @@ a.IA/
 │   ├─ botao.svg
 │   └─ demo-banner.png
 └─ README.md           # Documentação do projeto
-
+```
 
 ---
 
