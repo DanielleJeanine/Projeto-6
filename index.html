@@ -1,72 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>a.IA - Assistente Virtual</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>a.IA - Assistente Virtual</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-</head>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
 
-<body>
-  <div class="container">
-    <div class="title">Bem-vindo ao</div>
-
-    <div class="content">
-      <img class="logo" src="assets/logo.svg" alt="Logo a.IA" />
-      <p class="subtitle">
-        Seu <strong>assistente virtual</strong> feito para ajudá-lo a
-        <strong>encontrar respostas</strong> para qualquer tipo de dúvida do seu dia a dia!
-      </p>
-    </div>
-    <section>
-      <label for="api-key">Chave de API</label>
-      <div class="input-group">
-        <input type="text" id="api-key" placeholder="Insira sua chave de API (OpenAI ou Gemini)" />
-        <button class="botao">
-          <img src="assets/botao.svg" alt="Enviar" />
-        </button>
-      </div>
-      <div class="nota">Sua chave será salva localmente no navegador.</div>
-  </div>
-  </section>
-
-  <section id="tela-pergunta">
-    <h2>Olá, em que posso ajudá-lo?</h2>
-
-    <div class="input-container">
-      <input type="text" placeholder="Pergunte ao assistente">
-      <button class="btn-enviar">
-        <img src="assets/botao.svg" alt="Enviar" />
+  <body>
+    <!-- Barra de acessibilidade -->
+    <div class="barra-acessibilidade">
+      <button id="toggleTheme" aria-label="Alternar tema">🌙/☀️</button>
+      <button id="increaseFont" aria-label="Aumentar fonte">A+</button>
+      <button id="decreaseFont" aria-label="Diminuir fonte">A-</button>
+      <button id="readSelected" aria-label="Ler texto selecionado">🔊</button>
+      <button id="toggleHistory" aria-label="Mostrar/ocultar histórico">
+        📜 Histórico
       </button>
     </div>
 
-    <p class="nota">A <strong>a.IA</strong> é apenas uma assistente e pode cometer erros. Por isso, indicamos sempre
-      checar as respostas.</p>
-  </section>
+    <div class="container">
+      <div class="title">Bem-vindo ao</div>
 
-  <section class="resposta" id="respostaContainer" style="display: none;">
-    <h2>Resposta da IA:</h2>
-    <p id="resposta"></p>
-    <div class="acoes">
-      <button id="copyBtn">📋 Copiar</button>
-      <button id="clearBtn">🗑️ Limpar</button>
-      <button id="pdfBtn">📄 Exportar PDF</button>
+      <div class="content">
+        <img class="logo" src="assets/logo.svg" alt="Logo a.IA" />
+        <p class="subtitle">
+          Seu <strong>assistente virtual</strong> feito para ajudá-lo a
+          <strong>encontrar respostas</strong> para qualquer tipo de dúvida do
+          seu dia a dia!
+        </p>
+      </div>
+      <section>
+        <label for="api-key">Chave de API</label>
+        <div class="input-group">
+          <input
+            type="password"
+            id="api-key"
+            placeholder="Insira sua chave de API (OpenAI ou Gemini)"
+          />
+          <button class="botao">
+            <img src="assets/botao.svg" alt="Salvar chave" />
+          </button>
+        </div>
+        <div class="nota">Sua chave será salva localmente no navegador.</div>
+      </section>
+
+      <section id="tela-pergunta">
+        <h2>Olá, em que posso ajudá-lo?</h2>
+
+        <div class="input-container">
+          <input
+            id="questionInput"
+            type="text"
+            maxlength="200"
+            placeholder="Pergunte ao assistente"
+          />
+          <button class="btn-enviar">
+            <img src="assets/botao.svg" alt="Enviar" />
+          </button>
+        </div>
+        <p id="charCount" class="nota">0 / 200</p>
+        <p class="nota">
+          A <strong>a.IA</strong> é apenas uma assistente e pode cometer erros.
+          Por isso, indicamos sempre checar as respostas.
+        </p>
+      </section>
+
+      <section class="resposta" id="respostaContainer" style="display: none">
+        <h2>Resposta da IA:</h2>
+        <p id="resposta"></p>
+        <div class="acoes">
+          <button id="copyBtn">📋 Copiar</button>
+          <button id="clearBtn">🗑️ Limpar</button>
+          <button id="pdfBtn">📄 Exportar PDF</button>
+        </div>
+      </section>
+
+      <!-- Histórico -->
+      <section id="historico" style="display: none">
+        <h2>Histórico</h2>
+        <ul id="historyList"></ul>
+      </section>
     </div>
-  </section>
 
+    <footer class="footer">
+      <div class="footer-content">
+        <h3>Equipe de Desenvolvimento</h3>
+        <ul>
+          <li>Carla Matos</li>
+          <li>Danielle Jeanine</li>
+          <li>Ítalo Feitosa</li>
+          <li>Thiago dos Reis</li>
+        </ul>
+        <p>&copy; 2025 a.IA. Nenhum dos direitos reservados.</p>
+      </div>
+    </footer>
 
-  <script src="script.js"></script>
-
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
